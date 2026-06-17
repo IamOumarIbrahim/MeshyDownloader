@@ -1,9 +1,18 @@
+import os
 import re
 
-html_file = r"C:\Users\omarb\.gemini\antigravity\brain\15da408e-1174-49f4-9358-337d966638d5\.system_generated\steps\580\content.md"
+# Resolve path relative to script directory
+script_dir = os.path.dirname(os.path.abspath(__file__))
+html_file = os.path.join(script_dir, "_debug", "debug_midwait.html")
 
-with open(html_file, "r", encoding="utf-8") as f:
-    content = f.read()
+# Fallback to absolute path if needed, but relative first
+if not os.path.exists(html_file):
+    html_file = r"C:\Users\omarb\.gemini\antigravity\brain\15da408e-1174-49f4-9358-337d966638d5\.system_generated\steps\580\content.md"
+
+content = ""
+if os.path.exists(html_file):
+    with open(html_file, "r", encoding="utf-8") as f:
+        content = f.read()
 
 print("Searching for buttons and play text...")
 
