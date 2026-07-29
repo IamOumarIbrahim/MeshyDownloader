@@ -1,39 +1,59 @@
-# 📦 MeshyDownloader — Direct `.glb` Extraction from Meshy.ai
+<div align="center">
+  <h1>📦 MeshyDownloader</h1>
+  <p><strong>Extracts and downloads decrypted `.glb` 3D models directly from public Meshy.ai share links.</strong></p>
 
-[![License: CC0](https://img.shields.io/badge/License-CC0_1.0-lightgrey.svg?style=flat-square)](LICENSE)
-[![Language](https://img.shields.io/badge/Python-3.10+-blue.svg?style=flat-square&logo=python&logoColor=white)](#)
-[![Platform](https://img.shields.io/badge/Platform-Windows_10%2F11-lightgrey.svg?style=flat-square)](#)
-[![Key Dependency](https://img.shields.io/badge/websockets-11.0+-green.svg?style=flat-square)](#)
+  [![Python](https://img.shields.io/badge/Python-3.10+-blue.svg?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
+  [![License: CC0 1.0](https://img.shields.io/badge/License-CC0%201.0-yellow.svg?style=flat-square)](LICENSE)
+  [![CI](https://github.com/IamOumarIbrahim/MeshyDownloader/actions/workflows/ci.yml/badge.svg)](https://github.com/IamOumarIbrahim/MeshyDownloader/actions/workflows/ci.yml)
 
-Extracts and downloads decrypted `.glb` 3D models directly from public Meshy.ai share links. It resolves headless browser detection and intercepts the decryption process inside the browser web worker to capture the model file in real-time.
+  <br />
+  [![websockets](https://img.shields.io/badge/Dependency-websockets%2011.0+-green.svg?style=flat-square)](https://pypi.org/project/websockets/)
+</div>
 
----
+MeshyDownloader is a Windows-based extraction tool designed to securely download `.glb` models from Meshy.ai links without relying on manual browser inspection. It resolves headless browser detection and intercepts the decryption process inside the browser web worker to capture the model file in real-time.
+
+<br />
 
 ## 📖 Table of Contents
+- [What is MeshyDownloader?](#-what-is-meshydownloader)
 - [Key Features](#-key-features)
-- [System Architecture](#%EF%B8%8F-system-architecture)
-- [Quick Setup & Installation](#-quick-setup--installation)
+- [System Architecture](#-system-architecture)
+- [Setup & Installation](#-setup--installation)
 - [How to Use](#-how-to-use)
+- [Scope & Limitations](#-scope--limitations)
 - [File Structure](#-file-structure)
+- [Troubleshooting](#-troubleshooting)
+- [Contributing](#-contributing)
 - [License](#-license)
 
 ---
 
-## Key Features
+## 💡 What is MeshyDownloader?
 
-- **Custom Dark UI**: Provides a modern dark-themed user interface built using optimized Tkinter.
+Downloading models from Meshy.ai normally involves fighting encrypted `.meshy` blobs and navigating complex network request obfuscation. MeshyDownloader automates the decryption bypass by directly intercepting the raw data in the browser.
+
+Instead of the manual, error-prone way of doing this, MeshyDownloader automates the process:
+- **Custom Dark UI**: Provides a modern Tkinter-based dashboard for easy URL input and folder selection.
 - **Decrypted GLB Extraction**: Intercepts the decryption logic inside the browser's web worker to extract the raw `.glb` files.
-- **Anti-Bot Bypass**: Automatically masks the headless Chrome browser environment (clearing the `navigator.webdriver` fingerprint) to bypass anti-bot challenges.
-- **Real-time Log Console**: Monitors network requests, browser messages, and download status in a dedicated logger window.
-- **Single-Click Installer**: Offers an easy-to-use, pre-packaged Inno Setup installer that handles execution setup on Windows.
+- **Anti-Bot Bypass**: Automatically masks the headless Chrome browser environment to bypass anti-bot challenges.
 
 ---
 
-## System Architecture
+## ✨ Key Features
+
+- 🎨 **Custom Dark UI**: Provides a modern dark-themed user interface built using optimized Tkinter.
+- 🔓 **Decrypted GLB Extraction**: Intercepts the decryption logic inside the browser's web worker to extract the raw `.glb` files.
+- 🤖 **Anti-Bot Bypass**: Automatically masks the headless Chrome browser environment (clearing the `navigator.webdriver` fingerprint) to bypass anti-bot challenges.
+- 📋 **Real-time Log Console**: Monitors network requests, browser messages, and download status in a dedicated logger window.
+- ⚡ **Single-Click Installer**: Offers an easy-to-use, pre-packaged Inno Setup installer that handles execution setup on Windows.
+
+---
+
+## ⚙️ System Architecture
 
 The following diagram illustrates the application's headless browser injection and worker-spy pipeline.
 
-`mermaid
+```mermaid
 graph TD
     User["User Input: Share URL"] --> GUI["Tkinter GUI Dashboard"]
     GUI --> Trigger["Launch Headless Chrome (Remote Debugging: 9222)"]
@@ -49,56 +69,58 @@ graph TD
     classDef default fill:#0f172a,stroke:#3b82f6,stroke-width:2px,color:#fff;
     classDef process fill:#1e1b4b,stroke:#a855f7,stroke-width:2px,color:#fff;
     class Trigger,Inject,Navigate,Spy,Capture,Save,Terminate process;
-`
+```
 
 ---
 
-## 🚀 Quick Setup & Installation
+## 🚀 Setup & Installation
 
-### Prerequisites (Zero-Dependency Setup)
-This guide assumes a clean machine with **no pre-installed tools**.
-
-```cmd
+### Option A: 1-Click Setup (Windows Winget)
+```shell
 winget install --id Python.Python.3.10 -e --accept-source-agreements --accept-package-agreements
 winget install --id Git.Git -e --accept-source-agreements --accept-package-agreements
 ```
+This script automates the installation of Python and Git on a clean Windows machine.
 
-🔍 **Verification Command**:
-```cmd
-python --version
-```
-*Expected Output*: `Python 3.10.x`
+### Option B: Manual Installation
 
-### Clone & Install
 ```bash
 git clone https://github.com/IamOumarIbrahim/MeshyDownloader.git
 cd MeshyDownloader
 pip install websockets
 ```
 
-### Run
+🔍 **Verification Command**:
 ```bash
-python meshy_downloader.py
+python --version
 ```
+*Expected Output*: `Python 3.10.x`
 
 ---
 
-## How to Use
+## 🖥️ How to Use
 
 1. Launch **MeshyDownloader** from your desktop shortcut or via Python CLI.
-2. Paste a public Meshy.ai shared model link (e.g., https://www.meshy.ai/s/8QkxPa) in the **Meshy.ai Model URL** field.
-3. Select the desired destination folder.
-4. Click **Extract & Download Model** to begin. The log console will update in real-time as the download finishes.
+2. Paste a public Meshy.ai shared model link (e.g., `https://www.meshy.ai/s/8QkxPa`) in the **Meshy.ai Model URL** field.
+3. Select the desired destination folder and click **Extract & Download Model** to begin. The log console will update in real-time as the download finishes.
 
 ```bash
-# Example command
+# Launch the application interface
 python meshy_downloader.py
 ```
 
 ---
 
-## File Structure
+## 🔬 Scope & Limitations
 
+- **Platform Requirement**: Currently optimized and tested exclusively for Windows 10/11 environments.
+- **Browser Dependency**: Requires Google Chrome to be installed natively for headless debugging injection.
+
+---
+
+## 📁 File Structure
+
+```
 MeshyDownloader/
 ├── installer.iss - Inno Setup compiler configuration
 ├── meshy_downloader.py - Main Tkinter GUI application
@@ -107,8 +129,30 @@ MeshyDownloader/
 ├── find_button.py - Script to locate specific UI targets on the page
 ├── trace_outgoing.py - Python CLI tool to inspect worker messages in detail
 └── README.md - Project documentation
+```
+
+---
+
+## 🩹 Troubleshooting
+
+| Issue | Root Cause | Resolution |
+| :--- | :--- | :--- |
+| Download fails immediately | Anti-bot detection active | Ensure Chrome is updated and not running other active debugging sessions. |
+| UI freezes on download | Worker interception timeout | Restart the application and verify your network connectivity to Meshy.ai. |
+
+---
+
+## 🧩 Contributing
+
+Contributions are welcome, particularly in adding support for other 3D model sharing platforms or improving the web worker interception logic to be more robust. Feel free to open a pull request or submit an issue.
 
 ---
 
 ## 📄 License
-This repository is licensed under the [CC0 1.0 Universal (CC0 1.0) Public Domain Dedication](LICENSE).
+CC0 1.0 © 2024 [IamOumarIbrahim](https://github.com/IamOumarIbrahim)
+
+<div align="center">
+
+If MeshyDownloader saved you time downloading 3D models, a ⭐ helps other people find it.
+
+</div>
