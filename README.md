@@ -19,7 +19,7 @@ Extracts and downloads decrypted `.glb` 3D models directly from public Meshy.ai 
 
 ---
 
-## ✨ Key Features
+## Key Features
 
 - **Custom Dark UI**: Provides a modern dark-themed user interface built using optimized Tkinter.
 - **Decrypted GLB Extraction**: Intercepts the decryption logic inside the browser's web worker to extract the raw `.glb` files.
@@ -29,11 +29,11 @@ Extracts and downloads decrypted `.glb` 3D models directly from public Meshy.ai 
 
 ---
 
-## ⚙️ System Architecture
+## System Architecture
 
 The following diagram illustrates the application's headless browser injection and worker-spy pipeline.
 
-```mermaid
+`mermaid
 graph TD
     User["User Input: Share URL"] --> GUI["Tkinter GUI Dashboard"]
     GUI --> Trigger["Launch Headless Chrome (Remote Debugging: 9222)"]
@@ -49,7 +49,7 @@ graph TD
     classDef default fill:#0f172a,stroke:#3b82f6,stroke-width:2px,color:#fff;
     classDef process fill:#1e1b4b,stroke:#a855f7,stroke-width:2px,color:#fff;
     class Trigger,Inject,Navigate,Spy,Capture,Save,Terminate process;
-```
+`
 
 ---
 
@@ -83,10 +83,10 @@ python meshy_downloader.py
 
 ---
 
-## 🛠️ How to Use
+## How to Use
 
-1. Launch **MeshyDownloader** from your desktop shortcut or via python CLI.
-2. Paste a public Meshy.ai shared model link (e.g. `https://www.meshy.ai/s/8QkxPa`) in the **Meshy.ai Model URL** field.
+1. Launch **MeshyDownloader** from your desktop shortcut or via Python CLI.
+2. Paste a public Meshy.ai shared model link (e.g., https://www.meshy.ai/s/8QkxPa) in the **Meshy.ai Model URL** field.
 3. Select the desired destination folder.
 4. Click **Extract & Download Model** to begin. The log console will update in real-time as the download finishes.
 
@@ -97,7 +97,7 @@ python meshy_downloader.py
 
 ---
 
-## 📁 File Structure
+## File Structure
 
 MeshyDownloader/
 ├── installer.iss - Inno Setup compiler configuration
