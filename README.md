@@ -2,15 +2,15 @@
   <h1>MeshyDownloader</h1>
   <p><strong>Extracts and downloads decrypted `.glb` 3D models directly from public Meshy.ai share links.</strong></p>
 
-  [![Python](https://img.shields.io/badge/Python-3.10+-blue.svg?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
-  [![License: CC0 1.0](https://img.shields.io/badge/License-CC0%201.0-yellow.svg?style=flat-square)](LICENSE)
-  [![CI](https://github.com/IamOumarIbrahim/MeshyDownloader/actions/workflows/ci.yml/badge.svg)](https://github.com/IamOumarIbrahim/MeshyDownloader/actions/workflows/ci.yml)
+  <p>
+    <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.10+-blue.svg?style=flat-square&logo=python&logoColor=white" alt="Python" /></a>
+    <a href="LICENSE"><img src="https://img.shields.io/badge/License-CC0%201.0-yellow.svg?style=flat-square" alt="License: CC0 1.0" /></a>
+    <a href="https://pypi.org/project/websockets/"><img src="https://img.shields.io/badge/Dependency-websockets%2011.0+-green.svg?style=flat-square" alt="websockets" /></a>
+  </p>
 
-  <br />
-  [![websockets](https://img.shields.io/badge/Dependency-websockets%2011.0+-green.svg?style=flat-square)](https://pypi.org/project/websockets/)
-
-  <br /><br />
-  <img src="demo.gif" alt="MeshyDownloader Demo" width="100%" />
+  <p>
+    <img src="demo.gif" alt="MeshyDownloader Demo" width="100%" />
+  </p>
 </div>
 
 MeshyDownloader is a Windows-based extraction tool designed to securely download `.glb` models from Meshy.ai links without relying on manual browser inspection. It resolves headless browser detection and intercepts the decryption process inside the browser web worker to capture the model file in real-time.
