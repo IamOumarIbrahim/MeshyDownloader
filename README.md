@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>📦 MeshyDownloader</h1>
+  <h1> MeshyDownloader</h1>
   <p><strong>Extracts and downloads decrypted `.glb` 3D models directly from public Meshy.ai share links.</strong></p>
 
   <p>
@@ -17,7 +17,7 @@
 > **Platform & Browser Requirement**: Requires Windows 10/11 and Google Chrome installed natively for headless debugging injection.
 
 ```bash
-# Quickstart — Launch dashboard in 30 seconds
+# Quickstart  Launch dashboard in 30 seconds
 pip install websockets
 python meshy_downloader.py
 ```
@@ -26,11 +26,11 @@ python meshy_downloader.py
 
 **Why MeshyDownloader exists:** I built this tool to bypass anti-bot detection and intercept decrypted 3D model data directly inside the browser's web worker in real-time.
 
-MeshyDownloader provides an automated dark-themed GUI that extracts raw `.glb` files from Meshy.ai share URLs without requiring browser DevTools inspection. It's built for 3D creators and artists — not for general video or web scraping.
+MeshyDownloader provides an automated dark-themed GUI that extracts raw `.glb` files from Meshy.ai share URLs without requiring browser DevTools inspection. It's built for 3D creators and artists  not for general video or web scraping.
 
 <br />
 
-## 📖 Table of Contents
+## Table of Contents
 - [What is MeshyDownloader?](#-what-is-meshydownloader)
 - [Key Features](#-key-features)
 - [System Architecture](#-system-architecture)
@@ -44,7 +44,7 @@ MeshyDownloader provides an automated dark-themed GUI that extracts raw `.glb` f
 
 ---
 
-## 💡 What is MeshyDownloader?
+## What is MeshyDownloader?
 
 MeshyDownloader is a Windows-based extraction tool designed to securely download `.glb` models from Meshy.ai links without relying on manual browser inspection. It resolves headless browser detection and intercepts the decryption process inside the browser web worker to capture the model file in real-time.
 
@@ -59,17 +59,17 @@ Instead of manual network inspection and binary decryption:
 
 ---
 
-## ✨ Key Features
+## Key Features
 
-- 🎨 **Custom Dark UI**: Provides a modern dark-themed user interface built using optimized Tkinter.
-- 🔓 **Decrypted GLB Extraction**: Intercepts the decryption logic inside the browser's web worker to extract the raw `.glb` files.
-- 🤖 **Anti-Bot Bypass**: Automatically masks the headless Chrome browser environment (clearing the `navigator.webdriver` fingerprint) to bypass anti-bot challenges.
-- 📋 **Real-time Log Console**: Monitors network requests, browser messages, and download status in a dedicated logger window.
-- ⚡ **Single-Click Installer**: Offers an easy-to-use, pre-packaged Inno Setup installer that handles execution setup on Windows.
+-  **Custom Dark UI**: Provides a modern dark-themed user interface built using optimized Tkinter.
+-  **Decrypted GLB Extraction**: Intercepts the decryption logic inside the browser's web worker to extract the raw `.glb` files.
+-  **Anti-Bot Bypass**: Automatically masks the headless Chrome browser environment (clearing the `navigator.webdriver` fingerprint) to bypass anti-bot challenges.
+-  **Real-time Log Console**: Monitors network requests, browser messages, and download status in a dedicated logger window.
+-  **Single-Click Installer**: Offers an easy-to-use, pre-packaged Inno Setup installer that handles execution setup on Windows.
 
 ---
 
-## ⚙️ System Architecture
+## ️ System Architecture
 
 The following diagram illustrates the application's headless browser injection and worker-spy pipeline.
 
@@ -93,7 +93,7 @@ graph TD
 
 ---
 
-## 🚀 Setup & Installation
+## Setup & Installation
 
 ### Option A: 1-Click Setup (Windows Winget)
 ```shell
@@ -110,7 +110,7 @@ cd MeshyDownloader
 pip install websockets
 ```
 
-🔍 **Verification Command**:
+ **Verification Command**:
 ```bash
 python --version
 ```
@@ -118,7 +118,7 @@ python --version
 
 ---
 
-## 🖥️ How to Use
+## ️ How to Use
 
 1. Launch **MeshyDownloader** from your desktop shortcut or via Python CLI.
 2. Paste a public Meshy.ai shared model link (e.g., `https://www.meshy.ai/s/8QkxPa`) in the **Meshy.ai Model URL** field.
@@ -131,14 +131,14 @@ python meshy_downloader.py
 
 ---
 
-## 🔬 Scope & Limitations
+## Scope & Limitations
 
 - **Platform Requirement**: Currently optimized and tested exclusively for Windows 10/11 environments.
 - **Browser Dependency**: Requires Google Chrome to be installed natively for headless debugging injection.
 
 ---
 
-## 📁 File Structure
+## File Structure
 
 ```
 MeshyDownloader/
@@ -155,7 +155,7 @@ MeshyDownloader/
 
 ---
 
-## 🩹 Troubleshooting
+## Troubleshooting
 
 | Issue | Root Cause | Resolution |
 | :--- | :--- | :--- |
@@ -164,17 +164,17 @@ MeshyDownloader/
 
 ---
 
-## 🧩 Contributing
+## Contributing
 
 Contributions are welcome, particularly in adding support for other 3D model sharing platforms or improving the web worker interception logic to be more robust. Feel free to open a pull request or submit an issue.
 
 ---
 
-## 📄 License
+## License
 CC0 1.0 © 2024 [IamOumarIbrahim](https://github.com/IamOumarIbrahim)
 
 <div align="center">
 
-If MeshyDownloader saved you time downloading 3D models, a ⭐ helps other people find it.
+If MeshyDownloader saved you time downloading 3D models, a  helps other people find it.
 
 </div>
