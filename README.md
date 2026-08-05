@@ -10,7 +10,7 @@
 </div>
 
 <p align="center">
-  <img src="demo.gif" alt="MeshyDownloader Live Demo" width="100%" />
+  <img src="assets/demo.gif" alt="MeshyDownloader Live Demo" width="100%" />
 </p>
 
 > [!IMPORTANT]
@@ -142,7 +142,8 @@ python meshy_downloader.py
 
 ```
 MeshyDownloader/
-├── demo.gif                     - Demo preview animation
+├── assets/
+│   └── demo.gif                 - Demo preview animation
 ├── installer.iss                - Inno Setup compiler configuration
 ├── meshy_downloader.py          - Main Tkinter GUI application
 ├── decrypt.js                   - Node.js script to run WASM model decryption locally
